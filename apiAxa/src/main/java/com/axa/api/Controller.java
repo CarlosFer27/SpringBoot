@@ -20,15 +20,19 @@ public class Controller {
 
 
 		salida.setDiagnostico(diagDescripcion); //Setea a la salida el diagnostico con su descripcion
-		salida.setIncluido(cg.incluido(diagnostico, request.getCodInclProductos())); //Invoca metodo para validar si el diagnostico esta dentro de las inclusiones del producto 
+		salida.setIncluido(cg.incluido(diagnostico, request.getCodInclProductos(),request.getCodExclProductos())); //Invoca metodo para validar si el diagnostico esta dentro de las inclusiones del producto
+		salida.setEndoso(cg.endoso(diagnostico, request.getCodInclEndosos(), request.getCodExclEndosos()));
 		salida.setEstatusPoliza(cg.validaPago(request.getEstatusPoliza()));
 		salida.setCadera(cg.cadera(diagDescripcion));
 		salida.setRodilla(cg.rodilla(diagDescripcion));
-		salida.setComunicado(cg.comunicado(diagnostico, request.getCodInclComunicado()));
+		salida.setComunicado(cg.comunicado(diagnostico, request.getCodInclComunicado(), request.getCodExclComunicado()));
 		salida.setColumna(cg.columna(diagDescripcion));
 		salida.setBlefaroplastia(cg.blefaroplastia(diagDescripcion));
 		salida.setPstosisPalpebral(cg.pstosisPalpebral(diagDescripcion));
 		salida.setDisfunsionErectil(cg.disfuncionErectil(diagDescripcion));
+		salida.setPerro(cg.perro(diagDescripcion));
+		salida.setGato(cg.gato(diagDescripcion));
+		salida.setCancelada(cg.cancelada(request.getEstatusPoliza()));
 		return salida;
 	}	
 	

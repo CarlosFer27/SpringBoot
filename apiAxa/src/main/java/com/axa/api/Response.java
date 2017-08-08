@@ -17,6 +17,13 @@ public class Response {
 	private boolean blefaroplastia;
 	private boolean pstosisPalpebral;
 	private boolean disfunsionErectil;
+	private boolean cancelada;
+	public boolean isCancelada() {
+		return cancelada;
+	}
+	public void setCancelada(boolean cancelada) {
+		this.cancelada = cancelada;
+	}
 	private boolean error;
 	
 	public boolean isIncluido() {
